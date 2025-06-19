@@ -30,3 +30,5 @@ class RedirectIfAuthenticated
         return $next($request);
     }
 }
+
+// this class is used to block the authenticated users from login/signup/register pages

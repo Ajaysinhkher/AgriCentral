@@ -21,3 +21,6 @@ class Authenticate extends Middleware
     }
 
 }
+
+
+// this class is used to block the unauthenticated users from protected pages

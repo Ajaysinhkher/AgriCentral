@@ -4,7 +4,7 @@ use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
-
+use App\Http\Controllers\Admin\CustomerController;
 
 Route::get('/admin', [LoginController::class, 'index'])->middleware('guest:admin')->name('admin.login');
 Route::prefix('admin')->group(function () {
@@ -25,9 +25,20 @@ Route::prefix('admin')->group(function () {
     Route::prefix('categories')->middleware('auth:admin')->group(function(){
         Route::get('/',[CategoryController::class,'index'])->name('admin.category.index');
         Route::get('/create',[CategoryController::class,'create'])->name('admin.category.create');
-        // Route::post('/store,'[CategoryController::class,'store'])->name('admin.category.store');
+        Route::post('/store',[CategoryController::class,'store'])->name('admin.category.store');
         Route::get('/edit/{id}',[CategoryController::class,'edit'])->name('admin.category.edit');
-        Route::post('/delete',[CategoryController::class,'delete'])->name('admin.category.delete');
+        Route::put('/update/{id}',[CategoryController::class,'update'])->name('admin.category.update');
+        Route::delete('/{id}',[CategoryController::class,'delete'])->name('admin.category.delete');
+     
+    });
+
+    Route::prefix('customers')->middleware('auth:admin')->group(function(){
+        Route::get('/',[CustomerController::class,'index'])->name('admin.customer.index');
+        // Route::get('/create',[CustomerController::class,'create'])->name('admin.customer.create');
+        // Route::post('/store',[CustomerController::class,'store'])->name('admin.customer.store');
+        Route::get('/edit/{id}',[CustomerController::class,'edit'])->name('admin.customer.edit');
+        Route::put('/update/{id}',[CustomerController::class,'update'])->name('admin.customer.update');
+        Route::delete('/{id}',[CustomerController::class,'delete'])->name('admin.customer.delete');
      
     });
 });

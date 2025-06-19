@@ -31,7 +31,7 @@
             <a href="{{ route('admin.category.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-green-700">
                 <i class="uil uil-list-ul"></i> Categories
             </a>
-            <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-green-700">
+            <a href="{{ route('admin.customer.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-green-700">
                 <i class="uil uil-users-alt"></i> Customers
             </a>
             <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-green-700">
