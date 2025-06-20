@@ -25,7 +25,7 @@
             <ul class="text-sm text-gray-300 space-y-2">
                 <li>Email: support@agricentral.com</li>
                 <li>Phone: +91 98765 43210</li>
-                <li>Location: Pune, Maharashtra, India</li>
+                <li>Location: Rajkot, Gujarat, India</li>
             </ul>
         </div>
 

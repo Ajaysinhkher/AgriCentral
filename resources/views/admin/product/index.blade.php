@@ -21,7 +21,7 @@
                 <th class="p-3 border">Image</th>
                 <th class="p-3 border">Description</th>
                 <th class="p-3 border">Price</th>
-                <th class="p-3 border">Quantity {{'(kg)'}}</th>
+                <th class="p-3 border">Stock {{'(kg)'}}</th>
                 <th class="p-3 border">Status</th>
                 <th class="p-3 border">Actions</th>
             </tr>
@@ -61,4 +61,6 @@
         </tbody>
     </table>
 </div>
+
+{{ $products->links() }}
 @endsection

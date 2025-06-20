@@ -14,7 +14,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(6);
         // dd($products);
         return view('admin.product.index',compact('products'));
     }
@@ -38,7 +38,7 @@ class ProductController extends Controller
                     'name' => $request->name,
                     'price' => $request->price,
                     'description' => $request->description,
-                    'quantity' => $request->quantity,
+                    'stock' => $request->stock,
                     'status' => $request->status,
                     'slug' => Str::slug($request->name),
                     'image' => $imagePath,
@@ -93,7 +93,7 @@ class ProductController extends Controller
                 'name' => $request->name,
                 'price' => $request->price,
                 'description' => $request->description,
-                'quantity' => $request->quantity,
+                'stock' => $request->stock,
                 'status' => $request->status,
                 'slug' => Str::slug($request->name),
                 'image' => $product->image,

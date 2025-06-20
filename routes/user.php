@@ -22,4 +22,6 @@ Route::get('/blog',[HomeController::class,'blog'])->middleware('auth')->name('bl
 Route::get('/home',[HomeController::class,'index'])->middleware('auth')->name('user.home');
 
 Route::get('/shop',[ShopController::class,'index'])->middleware('auth')->name('user.shop');
+Route::get('/shop/products/filter', [ShopController::class, 'filter'])->name('shop.products.filter');
+
 Route::get('/marketprice',[MarketPriceController::class,'index'])->middleware('auth')->name('user.marketprice');
